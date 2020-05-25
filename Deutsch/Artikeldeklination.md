@@ -2,7 +2,7 @@
 
 Bước 3, sử dụng các qui tắc sau:
 * Bestimmter Artikel:  
-    ![](/assets/img/![](/assets/img/2020-05-24-13-53-46.png).png)
+    ![](/assets/img/2020-05-24-13-53-46.png)
 * Unbestimmter Artikel:  
     ![](/assets/img/2020-05-24-13-59-27.png)
 * Kein:  
