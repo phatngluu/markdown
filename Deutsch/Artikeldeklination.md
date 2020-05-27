@@ -11,5 +11,7 @@ Bước 3, sử dụng các qui tắc sau:
     ![](/assets/img/2020-05-24-14-00-56.png)
 
 Short:
-* Dativ: M R M N - Mang Ra Miền Nam
-* Genitiv: S R S R - Sầu Riêng Sáu Ri
+* Nomi: R - E - S - E
+* Akku: N - E - S - E
+* Dativ: M R M N - Mơ Rồi Mơ Nữa / Mang Ra Miền Nam
+* Genitiv: S R S R - Sao Rồi Sao Rồi / Sầu Riêng Sáu Ri
