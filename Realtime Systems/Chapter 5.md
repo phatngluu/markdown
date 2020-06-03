@@ -32,7 +32,7 @@ In previous chapters, we ignores resources for scheduling processors. From this 
 
 (Bên dưới chưa phân loại)
 ## Đề bài :
-![](/assets/img/2020-06-03-10-09-49.png)
+![](chapter5.assets/2020-06-03-10-09-49.png)
 
 ## Uncontrolled - Priority inversion
 
@@ -40,7 +40,7 @@ In previous chapters, we ignores resources for scheduling processors. From this 
 
 ## Basic priority inheritance protocol
 ### Rule
-![](/assets/img/2020-05-27-11-16-31.png)
+![](chapter5.assets/2020-05-27-11-16-31.png)
 
 ### Steps to schedule
 - Schedule with algorithm

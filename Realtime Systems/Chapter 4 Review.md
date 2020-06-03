@@ -1,6 +1,6 @@
 # `Chapter 4 - Review`
 ## `Schedulable utilization: EDF`
-![](/assets/img/2020-05-25-14-52-38.png)
+![](chapter4-review.assets/2020-05-25-14-52-38.png)
 ## `Check schedulability task: ` 
 * U ≤ U_RM, when U_RM < U ≤ 1, consider simply periodic
 * Simply periodic, if not consider time demand analysis
@@ -8,14 +8,14 @@
   * Draw the time demand function graphs for all tasks or
   * Calculate time demand analysis
 ### `Details:`
-![](/assets/img/2020-05-25-14-53-35.png)
+![](chapter4-review.assets/2020-05-25-14-53-35.png)
 
 ## `Time demand analysis`
-![](/assets/img/2020-05-25-14-54-08.png)
+![](chapter4-review.assets/2020-05-25-14-54-08.png)
 
 
 ## `Exercises Chapter 4.1`
-![](/assets/img/2020-05-25-14-54-59.png)
+![](chapter4-review.assets/2020-05-25-14-54-59.png)
 
 ### `Solution`
 #### 1. 
@@ -27,21 +27,21 @@
 #### 3. 
 
 ## `Exercises Chapter 4.2`
-![](/assets/img/2020-05-25-14-26-27.png)
+![](chapter4-review.assets/2020-05-25-14-26-27.png)
 ### `Solution`
 #### 1. 
 ##### a.
-![](/assets/img/2020-05-25-14-35-18.png)
+![](chapter4-review.assets/2020-05-25-14-35-18.png)
 ##### b.
 * Because D_i < p_i for all i => Density test  
 * Delta = 2/5 + 2/4 + 4/8 = 1.4 > 1 => might still be feasible (see schedulable utilization: EDF)  
 * Run exhaustive simulation to prove
-![](/assets/img/2020-05-25-14-27-30.png)
+![](chapter4-review.assets/2020-05-25-14-27-30.png)
 
 #### 2. 
 
 ## `Exercises Chapter 4.3`
-![](/assets/img/2020-05-20-11-40-26.png)
+![](chapter4-review.assets/2020-05-20-11-40-26.png)
 ### `Solution`
 #### 1.  
 a.  

@@ -5,4 +5,4 @@
 [Adjektivdeklination Typ3 - null artikel](https://mein-deutschbuch.de/adjektivdeklination-nach-nullartikel.html)  
 [So sánh bằng, hơn, nhất](https://dattrandeutsch.com/ngu-phap/steigerung-der-adjektive-sanh-bang-sanh-hon-sanh-nhat-cua-tinh-tu-a2/)  
 
-![](/assets/img/2020-05-24-12-12-12.png)
+![](an_overview.assets/2020-05-24-12-12-12.png)
