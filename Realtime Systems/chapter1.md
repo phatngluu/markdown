@@ -15,7 +15,7 @@
 * Reactive systems: scheduling is driven by ongoing interaction with their environment. Eg: fire-control
 * Embedded systems: inside a system (not ifself a computer). *Eg: embedded computers in an automobile: fuel injection, airbag deployment,...*
 * Block diagram of a generic real-time control system
-![](/assets/img/2020-05-18-21-43-50.png)
+  ![](/assets/img/2020-06-03-16-02-51.png)
 
 ## Soft vs Hard
 A **soft** real-time system is one in which performance is degraded but not destroyed by failure to meet response-time constraints  
@@ -41,7 +41,7 @@ The time between the presentation of a set of inputs to a system and the realiza
   * Commercial solutions have certainly their place, but choosing when to use an off-the-shelf solution and choosing the right one are continuing challenges
 
 ## Realtime System Design Issue
-![](/assets/img/2020-05-18-22-29-48.png)
+![](/assets/img/2020-06-03-16-01-57.png)
 
 <hr>
 
@@ -73,7 +73,7 @@ the processor on which it is scheduled; may change for a variety of reasons: *Co
 * Relative deadline (D_i): the maximum allowable job response time  
 * Absolute deadline (d_i):  the instant of time by which a job is required to be completed (often called simply the deadline)  
 `absolute deadline = release time + relative deadline`
-![](/assets/img/2020-05-18-22-57-40.png)
+![](/assets/img/2020-06-03-16-04-39.png)
 
 ## Task
 * Unit of computation is a task
@@ -101,7 +101,7 @@ Periodic task T(i) has sequence of jobs J(i, 1), J(i, 2), ..., J(i, n)
   * In case no deadline specified D_i = p_i
 * The relative deadline is smaller than the time between jobs, allowing some **slack time** for other jobs. `Slacktime = Period - Relative deadline`
 
-![](/assets/img/2020-05-19-17-53-26.png)
+![](/assets/img/2020-06-03-16-05-23.png)
 
 ## Further terminology
 * Feasibility interval between release time and deadline `(r, r + D]`  
