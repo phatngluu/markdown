@@ -99,12 +99,12 @@ A job $J_i$ will execute for time $e_i$
   * Differing constraints on scheduling
 
 ## Periodic tasks: parameters
-Periodic task T(i) has sequence of jobs J(i, 1), J(i, 2), ..., J(i, n)  
-* The release time (r_i): time instant of first job J(i, 1) is ready for execution
-* The period (p_i): the minimum time between release times of consecutive jobs
-* The execution time (e_i): the maximum execution time of all jobs in the periodic task
-* The relative deadline (D_i): the interval of time by which a job is required to be completed from released
-  * In case no deadline specified D_i = p_i
+Periodic task $T_i$ has sequence of jobs $J_{i,1}, J_{i, 2}, ..., J_{i, n}$  
+* The release time ($r_i$): time instant of first job J(i, 1) is ready for execution
+* The period ($p_i$): the minimum time between release times of consecutive jobs
+* The execution time ($e_i)$: the maximum execution time of all jobs in the periodic task
+* The relative deadline ($D_i)$: the interval of time by which a job is required to be completed from released
+  * In case no deadline specified $D_i$ = $p_i$
 * The relative deadline is smaller than the time between jobs, allowing some **slack time** for other jobs. `Slacktime = Period - Relative deadline`
 
 ![](Chapter%201.assets/2020-06-03-16-05-23.png)
