@@ -8,3 +8,4 @@
 `T(period, execution time)`  
 * phi = 0
 * deadline = period
+

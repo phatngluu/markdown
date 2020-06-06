@@ -15,7 +15,7 @@
 * Reactive systems: scheduling is driven by ongoing interaction with their environment. Eg: fire-control
 * Embedded systems: inside a system (not ifself a computer). *Eg: embedded computers in an automobile: fuel injection, airbag deployment,...*
 * Block diagram of a generic real-time control system
-  ![](chapter1.assets/2020-06-03-16-02-51.png)
+  ![](Chapter%201.assets/2020-06-03-16-02-51.png)
 
 ## Soft vs Hard
 A **soft** real-time system is one in which performance is degraded but not destroyed by failure to meet response-time constraints  
@@ -41,7 +41,7 @@ The time between the presentation of a set of inputs to a system and the realiza
   * Commercial solutions have certainly their place, but choosing when to use an off-the-shelf solution and choosing the right one are continuing challenges
 
 ## Realtime System Design Issue
-![](chapter1.assets/2020-06-03-16-01-57.png)
+![](Chapter%201.assets/2020-06-03-16-01-57.png)
 
 <hr>
 
@@ -58,22 +58,28 @@ system
 A **task** is a set of related jobs which jointly provide some
 function
 ## Execution time
-A job J_i will execute for time e_i  
-This is the amount of time required to complete the
-execution of when it executes alone and has all the resources it needs  
-Value of depends upon complexity of the job and speed of
-the processor on which it is scheduled; may change for a variety of reasons: *Conditional branches, Cache memories and/or pipelines and Compression*
+A job $J_i$ will execute for time $e_i$  
+
+- This is the amount of time required to complete the
+  execution of when it executes alone and has all the resources it needs  
+- Value of depends upon complexity of the job and speed of
+  the processor on which it is scheduled; may change for a variety of reasons: 
+  - *Conditional branches*
+  - *Cache memories and/or pipelines*
+  - *Compression*
 
 ## Release and Response time
 **Release time:** the instant in time when a job becomes available for execution  
 **Response time:** the length of time from the release time of the job to the time instant when it completes
+
+![image-20200606220725529](Chapter%201.assets/image-20200606220725529.png)
 
 ## Deadlines and Timing constraints
 * Completion time: the instant at which a job completes execution  
 * Relative deadline (D_i): the maximum allowable job response time  
 * Absolute deadline (d_i):  the instant of time by which a job is required to be completed (often called simply the deadline)  
 `absolute deadline = release time + relative deadline`
-![](chapter1.assets/2020-06-03-16-04-39.png)
+![](Chapter%201.assets/2020-06-03-16-04-39.png)
 
 ## Task
 * Unit of computation is a task
@@ -101,8 +107,9 @@ Periodic task T(i) has sequence of jobs J(i, 1), J(i, 2), ..., J(i, n)
   * In case no deadline specified D_i = p_i
 * The relative deadline is smaller than the time between jobs, allowing some **slack time** for other jobs. `Slacktime = Period - Relative deadline`
 
-![](chapter1.assets/2020-06-03-16-05-23.png)
+![](Chapter%201.assets/2020-06-03-16-05-23.png)
 
 ## Further terminology
 * Feasibility interval between release time and deadline `(r, r + D]`  
 * Phase of task = release time of the first job
+

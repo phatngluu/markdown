@@ -58,3 +58,60 @@ In previous chapters, we ignores resources for scheduling processors. From this 
 - t = 11, J2 and J4 are both available, but we take J4 because at this time J4's priority is 1, J2 is 2.
 - t = 12.5, J4 releases R2 resource, but J4 is not blocked with R2 resource => no return priority (still hold that priority).
 - t = 13, ...
+
+## Basic priority ceiling protocol
+
+##### Two additional terms:
+
+- **Priority ceiling** of resource $R_k$ = highest priority of all the jobs that require $R_k$. Denoted by: $Π(R_k)$
+- Vào thời điểm t bất kỳ, **current priority ceiling** $Π(t)$ of the system = **highest priority ceiling** of *in-use* resources at time t.
+- If all resources are free, $Π(R_k)$ = Ω (a nonexistent priority level that is lower than the lowest priority level of all jobs)
+
+### Rules:
+
+#### Rule 1 – Scheduling rule:
+
+- Vào lúc job được release, current priority of this job = assigned priority. Job **thay đổi** **priority** khi **thoả mãn các điều kiện ở rule 3**.
+- Every ready job J is scheduled preemptively and in a priority-driven manner at its current priority $π(t)$.
+
+#### Rule 2 - Allocation rule:
+
+When a job **J** requests resource **R** at time **t,** có 2 trường hợp sau xảy ra:
+
+- R is **busy**. J's request **fails**, J is **blocked**.
+
+- R is **free**:
+
+  - If **J's priority > current priority ceiling $Π(t)$**. R is allocated to J.
+  - If **J's priority ≤ current priority ceiling $Π(t)$**. R is allocated to J **only if this job J holding resource(s) có priority ceiling =  $Π(t)$**. Otherwise, J's request is denied and J becomes blocked.
+
+  *=> Unlike priority inheritance: priority ceiling can deny access to an available resource*
+
+#### Rule 3 - Priority-inheritance rule:
+
+- The job $J_l$ blocks job $J$. Job $J_l$ **inherits current priority** $π(t)$ of $J$.
+- $J_l$ vẫn giữ inherited priority cho tới lúc nó giải phóng hết mọi resource(s) có priority ceiling ≥ $π(t)$. Vào thời điểm đó, priority of $J_l$ returns to priority trước lúc mà nó được cấp các resource(s) bên trên.
+
+### Enhancing the priority ceiling protocol
+
+* Stack-based priority ceiling protocol
+
+
+
+#### Stack-based priority ceiling protocol
+
+##### Example
+
+![image-20200605104333833](Chapter%205.assets/image-20200605104333833.png)
+
+$π(R_1) = 1; π(R_2) = 2$ 
+
+Note: nó cần resource, cần thì cấp, không được thì thôi, không xảy ra chuyện block => không có inherit. (need to think more)
+
+#### Priority-ceiling protocol in dynamic priority systems
+
+Dùng với "dynamic priority systems", nên có những thứ khác cần lưu ý:
+
+- Mỗi lần một job mới được release, priority của các jobs sẽ thay đổi (hoặc giữ nguyên) => Cập nhật lại **priority của resources $π(R_k)$** và **current priority ceiling của system $π(t)$**.
+- 
+
