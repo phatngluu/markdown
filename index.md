@@ -4,7 +4,7 @@ Hello world.
 <ul>
 
 
-  <li><a href="/">/</a>Root</li>
+  <li><a href="/">/Root</a></li>
 
 
 
