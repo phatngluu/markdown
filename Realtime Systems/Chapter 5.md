@@ -7,16 +7,57 @@ In previous chapters, we ignores resources for scheduling processors. From this 
 - **How well these protocols succeed** in achieving this goal
 
 ## Definitions & Notations 
-*Slide 4 - 14*
+![image-20200611190859846](Chapter%205.assets/image-20200611190859846.png)
 ### Locks
-### Critical sections
-### Conflict & Blocking
-### Resource access control
-- Priority inversion
-- Time anomalies
-- Deadlock
 
-### Resource access control protocols
+![image-20200611190832239](Chapter%205.assets/image-20200611190832239.png)
+
+### Critical sections
+
+The segment (khúc) of a job that begins at a lock and ends at a matching unlock is a critical section.
+
+- Use the **expression [R, n; e]** to **represent** a **critical section** regarding **n units of R**, with the critical section **requiring e units of execution time** 
+- Critical sections may nest if a job needs multiple simultaneous resources
+
+![image-20200611190804514](Chapter%205.assets/image-20200611190804514.png)
+
+### Conflict & Blocking
+
+Two jobs **conflict** with one another if some of the **resources** they **require** **are** of **the same** type
+
+- They contend for a resource if one job requests a resource that the other job has already been granted
+
+When the scheduler **does not grant** $n_k$ units of resource $R_k$ to the job requesting them, the lock request $L(R_k , n_k )$ of the job fails (or is denied)
+
+- The job is blocked and loses the processor 
+- The job is unblocked when the scheduler grants it $n_k$ units of resource $R_k$ 
+
+### Example
+
+![image-20200611190010229](Chapter%205.assets/image-20200611190010229.png)
+
+### Resource access control
+
+A resource access-control protocol, or simply an access-control protocol, is a **set of rules** that govern:
+
+- when and under what conditions each request for resource is granted and 
+- how jobs requiring resources are scheduled.
+
+More detail the undesirable effects of resource contention:
+
+- **Priority inversion**: occurs when a **low-priority job executes** while some **ready higher-priority job waits**
+
+  <img src="Chapter%205.assets/image-20200611185543764.png" alt="image-20200611185543764" style="zoom:50%;" />****
+
+- **Time anomalies**
+
+  <img src="Chapter%205.assets/image-20200611190039933.png" alt="image-20200611190039933" style="zoom:50%;" />
+
+- **Deadlock**: Job 1 bị khoá bởi Job 2, Job 1 chờ job 2 chạy xong rồi tới luợt nó, nhưng Job 2 lại bị khoá bởi job 1 => Khoá lẫn nhau = Deadlock
+
+  ![image-20200611190229649](Chapter%205.assets/image-20200611190229649.png)
+
+## Resource access control protocols
 - Non-preemptable Critical Sections - NPCS 
 - Priority inheritance protocol
   - **The priority-ceiling protocol** extends the **priority-inheritance protocol** to **prevent deadlocks** and to **further reduce the blocking time**
@@ -25,22 +66,43 @@ In previous chapters, we ignores resources for scheduling processors. From this 
     - The **stack-based priority ceiling protocol**
     - The **ceiling priority protocol**
 - Stack-based priority ceiling protocol
-- The ceiling priority protocol (in dynamic priority systems)
+- The ceiling priority protocol (in dynamic priority systems) (không thi)
 
 
 
 
 (Bên dưới chưa phân loại)
 ## Đề bài :
-![](chapter5.assets/2020-06-03-10-09-49.png)
-
-## Uncontrolled - Priority inversion
+![image-20200611192622773](Chapter%205.assets/image-20200611192622773.png)
 
 ## Non-preemptive critical sections
 
+When **a jobs** **acquires** a **resource** it is **scheduled** with **highest priority** in a **nonpreemptable** manner
+
+**Deadlock** can **never** **occur**
+
+<img src="Chapter%205.assets/image-20200611191137324.png" alt="image-20200611191137324" style="zoom: 33%;" />
+
+![image-20200611191215306](Chapter%205.assets/image-20200611191215306.png)
+
 ## Basic priority inheritance protocol
+<img src="Chapter%205.assets/image-20200611193005546.png" alt="image-20200611193005546" style="zoom: 33%;" />
+
+<img src="Chapter%205.assets/image-20200611193032613.png" alt="image-20200611193032613" style="zoom:33%;" />
+### Properties
+Properties of the Priority-inheritance Protocol
+- Simple to implement, does not require prior knowledge of resource requirements 
+- Jobs exhibit different types of blocking
+  - Direct blocking due to resource locks 
+  - Priority-inheritance blocking 
+  - Transitive blocking
+- Deadlock is not prevented
+  - Although it can be prevented by using additional protocols in parallel
+- Can reduce blocking time compared to non-preemptable critical sections, but does not guarantee to minimize blocking
+
 ### Rule
-![](chapter5.assets/2020-05-27-11-16-31.png)
+
+<img src="chapter5.assets/2020-05-27-11-16-31.png" style="zoom: 33%;" />
 
 ### Steps to schedule
 - Schedule with algorithm
@@ -48,18 +110,39 @@ In previous chapters, we ignores resources for scheduling processors. From this 
   - If there is any job blocked: use rule 3
 - Whenever resource released, use rule 3 to return priorities
 
+### Example:
+
+<img src="Chapter%205.assets/image-20200611194025666.png" alt="image-20200611194025666" style="zoom:50%;" />
+
+![image-20200611194047908](Chapter%205.assets/image-20200611194047908.png)
+
 ### Complex example
-...
-- t = 6:
-  - J2 needs R2, but J5 holds R2. J2 is blocked by J5. Use rule 3, pi_5(6) = 2,  J5's priority now (t = 6) is J2's priority. J5 is executed with inherited priority (ignore blocked J2)
-- t = 7: J5 continues to execute with its R2 resource.
-- t = 8: J1 is released, it is highest priority. J1 is executed (J2 is stopped).   
-...
-- t = 11, J2 and J4 are both available, but we take J4 because at this time J4's priority is 1, J2 is 2.
-- t = 12.5, J4 releases R2 resource, but J4 is not blocked with R2 resource => no return priority (still hold that priority).
-- t = 13, ...
+
+<img src="Chapter%205.assets/image-20200611194101428.png" alt="image-20200611194101428" style="zoom: 33%;" />
+
+<img src="Chapter%205.assets/image-20200611194123503.png" alt="image-20200611194123503" style="zoom:50%;" />
+
+1. At time 0, job J 5 becomes ready and executes at its assigned priority 5. At time 1, it is granted the resource Black.
+2. At time 2, J 4 is released. It preempts J 5 and starts to execute.
+3. At time 3, J 4 requests Shaded. Shaded, being free, is granted to the job. The job continues to execute.
+4. At time 4, J 3 is released and preempts J 4 . At time 5, J 2 is released and preempts J 3 .
+5. At time 6, J 2 executes L(Black) to request Black; L(Black) fails because Black is in use by J 5 . J 2 is now directly blocked by J 5 . According to rule 3, J 5 inherits the priority 2 of J 2 . Because J 5 ’s priority is now the highest among all ready jobs, J 5 starts to execute.
+6. J 1 is released at time 7. Having the highest priority 1, it preempts J 5 and starts to execute.
+7. At time 8, J 1 executes L(Shaded), which fails, and becomes blocked. Since J 4 has Shaded at the time, it directly blocks J 1 and, consequently, inherits J 1 ’s priority 1. J4  now has the highest priority among the ready jobs J 3 , J 4 , and J 5 . Therefore, it starts to execute.
+8. At time 9, J 4 requests the resource Black and becomes directly blocked by J 5 . At this time the current priority of J 4 is 1, the priority it has inherited from J 1 since time 8. Therefore, J 5 inherits priority 1 and begins to execute.
+9. At time 11, J 5 releases the resource Black. Its priority returns to 5, which was its priority when it acquired Black. The job with the highest priority among all unblocked jobs is J 4 . Consequently, J 4 enters its inner critical section and proceeds to complete this and the outer critical section.
+10. At time 13, J 4 releases Shaded. The job no longer holds any resource; its priority returns to 4, its assigned priority. J 1 becomes unblocked, acquires Shaded, and begins to execute.
+11. At time 15, J 1 completes. J 2 is granted the resource Black and is now the job with the highest priority. Consequently, it begins to execute.
+12. At time 17, J 2 completes. Afterwards, jobs J 3 , J 4 , and J 5 execute in turn to completion.
 
 ## Basic priority ceiling protocol
+
+The priority-ceiling protocol **extends the priority-inheritance protocol** to **prevent deadlocks** and to further **reduce the blocking time**
+
+Key assumptions:
+
+- The **assigned priorities** of all jobs are **fixed** (e.g. RM scheduling, not EDF) 
+- The resources required by all jobs are **known a priori**
 
 ##### Two additional terms:
 
@@ -67,51 +150,71 @@ In previous chapters, we ignores resources for scheduling processors. From this 
 - Vào thời điểm t bất kỳ, **current priority ceiling** $Π(t)$ of the system = **highest priority ceiling** of *in-use* resources at time t.
 - If all resources are free, $Π(R_k)$ = Ω (a nonexistent priority level that is lower than the lowest priority level of all jobs)
 
-### Rules:
+#### Rules:
 
-#### Rule 1 – Scheduling rule:
+![image-20200611211844631](Chapter%205.assets/image-20200611211844631.png)
 
-- Vào lúc job được release, current priority of this job = assigned priority. Job **thay đổi** **priority** khi **thoả mãn các điều kiện ở rule 3**.
-- Every ready job J is scheduled preemptively and in a priority-driven manner at its current priority $π(t)$.
+![image-20200611211910907](Chapter%205.assets/image-20200611211910907.png)
 
-#### Rule 2 - Allocation rule:
+#### Example
 
-When a job **J** requests resource **R** at time **t,** có 2 trường hợp sau xảy ra:
+<img src="Chapter%205.assets/image-20200611211645394.png" alt="image-20200611211645394" style="zoom:50%;" />
 
-- R is **busy**. J's request **fails**, J is **blocked**.
+<img src="Chapter%205.assets/image-20200611211713599.png" alt="image-20200611211713599" style="zoom:50%;" />
 
-- R is **free**:
+#### Note
 
-  - If **J's priority > current priority ceiling $Π(t)$**. R is allocated to J.
-  - If **J's priority ≤ current priority ceiling $Π(t)$**. R is allocated to J **only if this job J holding resource(s) có priority ceiling =  $Π(t)$**. Otherwise, J's request is denied and J becomes blocked.
+If resource access in a system of preemptable, fixed priority jobs on one processor is controlled by the priority-ceiling protocol:
 
-  *=> Unlike priority inheritance: priority ceiling can deny access to an available resource*
+- Deadlock can never occur 
+- A job can be blocked for at most the duration of one critical section
+  - There is no transitive (bắc cầu) blocking under the priority-ceiling protocol
 
-#### Rule 3 - Priority-inheritance rule:
+#### Differences between the priority-inheritance and priority-ceiling protocols:
 
-- The job $J_l$ blocks job $J$. Job $J_l$ **inherits current priority** $π(t)$ of $J$.
-- $J_l$ vẫn giữ inherited priority cho tới lúc nó giải phóng hết mọi resource(s) có priority ceiling ≥ $π(t)$. Vào thời điểm đó, priority of $J_l$ returns to priority trước lúc mà nó được cấp các resource(s) bên trên.
+Priority inheritance is greedy, while priority ceiling is not
 
-### Enhancing the priority ceiling protocol
+- The priority ceiling protocol may withhold access to a free resource, causing a job to be blocked by a lower-priority job which does not hold the requested resource 
+  -  termed avoidance blocking
+- The priority ceiling protocol forces a fixed order onto resource accesses, thus eliminating deadlock
 
-* Stack-based priority ceiling protocol
+#### Deadlock avoidance example
 
+<img src="Chapter%205.assets/image-20200611212828588.png" alt="image-20200611212828588" style="zoom: 50%;" />
 
+![image-20200611212855579](Chapter%205.assets/image-20200611212855579.png)
+
+### Improve the priority ceiling protocol
 
 #### Stack-based priority ceiling protocol
 
+#### Rules:
+
+<img src="Chapter%205.assets/image-20200611213140069.png" alt="image-20200611213140069" style="zoom:50%;" />
+
 ##### Example
 
-![image-20200605104333833](Chapter%205.assets/image-20200605104333833.png)
+<img src="Chapter%205.assets/image-20200605104333833.png" alt="image-20200605104333833" style="zoom:50%;" />
 
 $π(R_1) = 1; π(R_2) = 2$ 
 
-Note: nó cần resource, cần thì cấp, không được thì thôi, không xảy ra chuyện block => không có inherit. (need to think more)
+<img src="Chapter%205.assets/image-20200611213753671.png" alt="image-20200611213753671" style="zoom: 50%;" />
 
-#### Priority-ceiling protocol in dynamic priority systems
+#### Note: 
 
-Dùng với "dynamic priority systems", nên có những thứ khác cần lưu ý:
+nó cần resource, cần thì cấp dựa theo ceiling của system, không được thì thôi, không xảy ra chuyện block => không có inherit.
 
-- Mỗi lần một job mới được release, priority của các jobs sẽ thay đổi (hoặc giữ nguyên) => Cập nhật lại **priority của resources $π(R_k)$** và **current priority ceiling của system $π(t)$**.
-- 
+#### More example:
+
+<img src="Chapter%205.assets/image-20200605104333833.png" alt="image-20200605104333833" style="zoom: 33%;" />
+
+#### Solution
+
+<img src="Chapter%205.assets/image-20200611214721675.png" alt="image-20200611214721675" style="zoom: 50%;" />
+
+<img src="Chapter%205.assets/image-20200611214708794.png" alt="image-20200611214708794" style="zoom: 50%;" />
+
+#### Deadlock avoidance
+
+<img src="Chapter%205.assets/image-20200611224734425.png" alt="image-20200611224734425" style="zoom:50%;" />
 

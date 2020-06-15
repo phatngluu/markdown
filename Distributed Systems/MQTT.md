@@ -9,4 +9,3 @@ QoS:
 
 Which model MQTT uses?
 - Client / Server.
-
