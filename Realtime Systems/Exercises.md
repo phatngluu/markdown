@@ -48,19 +48,84 @@
 
 ## Chapter 2
 
-<img src="Exercises.assets/image-20200609174542653.png" alt="image-20200609174542653" style="zoom: 50%;" />
+<img src="Exercises.assets/image-20200609174542653.png" alt="image-20200609174542653"  />
 
-<img src="Exercises.assets/image-20200609174552134.png" alt="image-20200609174552134" style="zoom: 33%;" />
+<img src="Exercises.assets/image-20200609174552134.png" alt="image-20200609174552134"  />
 
-<img src="Exercises.assets/image-20200609174600878.png" alt="image-20200609174600878" style="zoom: 33%;" />
+<img src="Exercises.assets/image-20200609174600878.png" alt="image-20200609174600878"  />
 
 ### Solution
 
-1. http://targetiesnow.blogspot.com/2013/10/real-time-system-by-jane-w-s-liu_9175.html
+#### 1.
 
-2. http://targetiesnow.blogspot.com/2013/10/real-time-system-by-jane-w-s-liu_1862.html
+##### a.
 
-3. http://targetiesnow.blogspot.com/2013/10/real-time-system-by-jane-w-s-liu_6447.html
+   ![img](https://miro.medium.com/max/904/0*cA8cPp4203d5ssy0.jpg)
+
+##### b. 
+
+   ![img](https://miro.medium.com/max/1000/0*AaDkx-KgEwqNqXhy.jpg)
+
+##### c.
+
+   ![img](https://miro.medium.com/max/1018/0*gs70AQentXx3PkmV.jpg)
+
+
+   J1 is the only job released at t=0, so it goes first.
+
+   At t=1, J2, J4, and J7 have been released. J4 has a level of 3, so it goes first.
+
+   At t=2, J4is done. J7 has the next highest level (2), so it goes next.
+
+   At t=3, J7 is done. J3, J5, J8, and J9 are released. J5 has the next highest level (2), so it runs.
+
+   At t=4, J5 is done. Either J2 or J8 could run because both have a level of 1 and both have had their precedence constraints met. At this point, J2 has already missed its deadline…
+
+   At t=5, either J2 or J8, whichever was run at t=4, is done. The one that was not previously run gets to run. There are no more level 1 job.
+
+   At t=6, J3, J6, and J9 are all eligible to run and are all at level 0. They can run in any order according to this scheduling algorithm.
+
+   J2 and J3 miss their deadlines. This is \*not\* an optimal scheduling algorithm.
+
+#### 2.
+##### a.
+![image-20200616205526588](Exercises.assets/image-20200616205526588.png)
+
+##### b.
+![image-20200616205739517](Exercises.assets/image-20200616205739517.png)
+
+#### 3.
+##### a.
+![img](https://miro.medium.com/max/626/0*P0w9CDMES9zdgG5m.jpg)
+
+##### b. **All jobs meet their deadline.**
+![img](https://miro.medium.com/max/1282/0*gpqXsPJKshjsqdIk.jpg)
+
+##### 3. Extra:
+
+**c)** Can the jobs meet their deadlines if we make them preemptable and schedule them preemptively? Explain your answer.
+
+Sol: **Job J9 does not meet its deadline.**
+
+![img](https://miro.medium.com/max/60/0*mXqcNzbSPcPy4pIg.jpg?q=20)
+
+![img](https://miro.medium.com/max/1298/0*mXqcNzbSPcPy4pIg.jpg)
+
+**d)** Can the jobs meet their deadlines if they are scheduled non-preemptively on four processors? Explain your answer.
+
+Sol: **Job J9 does not meet its deadline.**
+
+![img](https://miro.medium.com/max/60/0*YgVyofdz6vd43S1t.jpg?q=20)
+
+![img](https://miro.medium.com/max/1300/0*YgVyofdz6vd43S1t.jpg)
+
+**e)** Suppose that due to an improvement of the three processors, the execution time of every job is reduced by 1. Can the jobs meet their deadlines? Explain your answer.
+
+Sol: **Job J9 does not meet its deadline.**
+
+![img](https://miro.medium.com/max/60/0*2OeA0dr5hKFlE6FT.jpg?q=20)
+
+![img](https://miro.medium.com/max/1312/0*2OeA0dr5hKFlE6FT.jpg)
 
 ## Chapter 3
 
@@ -70,15 +135,41 @@
 
 ### Solution
 
-1. 
+#### 1. 
 
-   a,b. http://targetiesnow.blogspot.com/2013/10/real-time-system-by-jane-w-s-liu_5855.html 
+**a)** (6, 1), (10, 2), and (18, 2)
 
-   c,d. http://targetiesnow.blogspot.com/2013/10/real-time-system-by-jane-w-s-liu_3069.html
+![img](https://miro.medium.com/max/1184/1*oXjm0b9zfEhkqHTieqsjvg.png)
 
-   e,f. http://targetiesnow.blogspot.com/2013/10/real-time-system-by-jane-w-s-liu_793.html
+**b)** (8, 1), (15, 3), (20, 4), and (22, 6)
 
-2. http://targetiesnow.blogspot.com/2013/10/real-time-system-by-jane-w-s-liu_2408.html
+![img](https://miro.medium.com/max/1144/1*7S92UObNMU4fN9cNImUhng.png)
+
+**c)** (4, 0.5), (5, 1.0), (10, 2), and (24, 9)
+
+![img](https://miro.medium.com/max/1350/1*arCkJlQXYrsuFC6cTFHfXg.png)
+
+![img](https://miro.medium.com/max/1364/1*ZiFy9q6R60FTS1_qhBAtpw.png)
+
+**d)** (5, 0.1), (7, 1.0), (12, 6), and (45, 9)
+
+![img](https://miro.medium.com/max/1364/1*v2z8QJoqpnKoFdL1lHbe8A.png)
+
+**e)** (5, 0.1), (7, 1.0), (12, 6), and (45, 9)
+
+![img](https://miro.medium.com/max/1358/1*ClojuWRnXWyJXJpe7xkguA.png)
+
+**f)** (7, 5, 1, 5), (9, 1), (12, 3), and (0.5, 23, 7, 21)
+
+![img](https://miro.medium.com/max/1362/1*ywfnED1WJhnWqe7a6R_A8g.png)
+
+#### 2.
+##### a. 
+![img](https://miro.medium.com/max/1318/1*0ynrHgh79ZJFu2xLmxsrrQ.png)
+
+##### b. 
+
+![img](https://miro.medium.com/max/1288/1*cXX7VJV5RFEbOBnupwk-Bg.png)
 
 ## Chapter 4.1
 
@@ -86,11 +177,23 @@
 
 ### Solution
 
-1.
+#### 1. 
 
-2.
+- T1(6,2); T2(8,2); T3(12,2). 
 
-3.
+  LCM(6,8,12) = 24
+
+  ![image-20200617090823141](Exercises.assets/image-20200617090823141.png)
+
+#### 2.
+
+a. Utilization =1/3 + 2/5 + 3/8 = 1.108
+
+b. ![image-20200617100938512](Exercises.assets/image-20200617100938512.png)
+
+c. Task 3 cần 2 đơn vị thời gian, cần giảm task 1 minimum: 2/3 mỗi task.
+
+#### 3.
 
 ## Chapter 4.2
 
