@@ -191,7 +191,7 @@ a. Utilization =1/3 + 2/5 + 3/8 = 1.108
 
 b. ![image-20200617100938512](Exercises.assets/image-20200617100938512.png)
 
-c. Task 3 cần 2 đơn vị thời gian, cần giảm task 1 minimum: 2/3 mỗi task.
+c. Task 3 cần 2 đơn vị thời gian, cần giảm task 1 minimum: 2/3 đơn vị thời gian.
 
 #### 3.
 
