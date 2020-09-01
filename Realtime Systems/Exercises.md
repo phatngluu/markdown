@@ -199,20 +199,41 @@ c. Task 3 cần 2 đơn vị thời gian, cần giảm task 1 minimum: 2/3 đơn
 
 ![image-20200611175429253](Exercises.assets/image-20200611175429253.png)
 
-### Solution
-
-1.
-
-2.
+### Solution - Trong giấy!
 
 ## Chapter 4.3
 
+![image-20200617163911115](Exercises.assets/image-20200617163911115.png)
 
+### Solution
 
+#### 1.
 
+##### a. T = {(8, 3), (9, 3), (15, 3)}
 
-Algorithm: https://en.wikipedia.org/wiki/Weighted_round_robin#Algorithm
+![img](https://miro.medium.com/max/1272/1*o3XclvgzUs8LtuiqvTNEkw.png)
 
-Example: https://en.wikipedia.org/wiki/Weighted_round_robin#Example
+##### b. T = {(8, 4), (12, 4), (20, 4)}
 
+![img](https://miro.medium.com/max/1076/1*dAcTafQH2zKjRVMGpO3d2Q.png)
+
+##### c.  T = {(8, 4), (10, 2), (12, 3)}
+
+![img](https://miro.medium.com/max/1226/1*IeGC-eDuGF1qCpVO1BIGUA.png)
+
+#### 2. ![img](https://miro.medium.com/max/1360/1*3fkI7cpVA9qBDzKxC-rs-Q.png)
+
+#### 3.
+
+##### a.
+
+![img](https://miro.medium.com/max/1224/1*KqA3NdDvuPgroHTVwBk0ug.png)
+
+##### b.
+
+![img](https://miro.medium.com/max/1290/1*3XzHbDtPhu2TDhLkE8HLbg.png)
+
+<<<<<<< Updated upstream
 [http://et.engr.iupui.edu/~dskim/Classes/ESW5004/RTSys%20Lecture%20Note%20-%20ch04%20Clock-Driven%20Scheduling.pdf](http://et.engr.iupui.edu/~dskim/Classes/ESW5004/RTSys Lecture Note - ch04 Clock-Driven Scheduling.pdf)
+=======
+>>>>>>> Stashed changes
